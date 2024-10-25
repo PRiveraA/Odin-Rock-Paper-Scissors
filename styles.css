@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+  box-sizing: content-box;
 }
 
 body {
@@ -16,10 +16,11 @@ main {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 90%;
   width: 90%;
+  gap: 7.5rem;
 }
 
 .h1-container {
@@ -37,7 +38,7 @@ h1 {
 
 .display-section {
   background-color: #a6a6a6;
-  height: 50%;
+  min-height: 50%;
   width: 100%;
 }
 
@@ -51,7 +52,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   width: 50%;
-  height: 25%;
+  min-height: 45%;
 }
 
 button {
