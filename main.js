@@ -58,7 +58,7 @@ function round(playerChoice, computerChoice) {
 
 function playGame() {
   // while (playerScore < 5 && computerScore < 5) {
-  round(getHumanChoice(), getComputerChoice())
+  // round(getHumanChoice(), getComputerChoice())
   // }
 
   // (playerScore < 5) ? alert("You Lose!") : alert("You win!")
