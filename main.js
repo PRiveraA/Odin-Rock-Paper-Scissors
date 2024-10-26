@@ -59,14 +59,16 @@ function round(playerChoice, computerChoice) {
   }
 }
 
-const buttons = document.querySelector(".button-section")
+const button = document.querySelectorAll("button")
 
-buttons.addEventListener("click", function (e) {
+button.forEach(button => {
+  button.addEventListener("click", function (e) {
 
-  let playerChoice = e.target.textContent.toLowerCase()
-  round(playerChoice, getComputerChoice())
+    let playerChoice = e.target.textContent.toLowerCase()
+    round(playerChoice, getComputerChoice())
 
-  let choiceDisplay = document.querySelector(".clbottom")
-  choiceDisplay.textContent = `Your choice: ${playerChoice.charAt(0).toUpperCase()}${playerChoice.slice(1)}`
+    let choiceDisplay = document.querySelector(".clbottom")
+    choiceDisplay.textContent = `Your choice: ${playerChoice.charAt(0).toUpperCase()}${playerChoice.slice(1)}`
 
+  })
 })
