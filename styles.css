@@ -6,7 +6,6 @@ body {
   background-color: #222222;
   justify-content: center;
   height: 100vh;
-  overflow: hidden;
   display: flex;
   align-items: center;
 }
@@ -111,6 +110,7 @@ button {
   text-align: center;
   margin-bottom: 4rem;
   min-height: 59px;
+  max-height: 59px;
 }
 
 .crbottom,
