@@ -66,7 +66,9 @@ const buttons = document.querySelector(".button-section")
 buttons.addEventListener("click", function (e) {
 
   let playerChoice = e.target.textContent.toLowerCase()
-
   round(playerChoice, getComputerChoice())
+
+  let choiceDisplay = document.querySelector(".clbottom")
+  choiceDisplay.textContent = `Your choice: ${playerChoice.charAt(0).toUpperCase()}${playerChoice.slice(1)}`
 
 })
