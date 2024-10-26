@@ -72,16 +72,11 @@ button {
 }
 
 .screen {
-  border: 2px, solid black;
   height: 90%;
   width: 94%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.screen * {
-  border: 2px, solid red;
 }
 
 .screen-top {
@@ -116,4 +111,9 @@ button {
   text-align: center;
   margin-bottom: 4rem;
   min-height: 59px;
+}
+
+.crbottom,
+.clbottom {
+  width: 318px;
 }

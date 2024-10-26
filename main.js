@@ -12,53 +12,54 @@ function getComputerChoice() {
   return choices[randomNum]
 }
 
+let playerScoreDisplay = document.querySelector(".clmiddle")
+let computerScoreDisplay = document.querySelector(".crmiddle")
+
 function round(playerChoice, computerChoice) {
 
   let announcement = document.querySelector(".screen-bottom")
 
   if (playerChoice === computerChoice) {
     announcement.textContent = "It's a tie!"
-    return
+  } else {
+    switch (playerChoice + " vs " + computerChoice) {
+      case "rock vs scissors":
+        announcement.textContent = "Rock beats Scissors, you win round!"
+        playerScore++
+        break
+      case "paper vs rock":
+        announcement.textContent = "Paper beats Rock, you win round!"
+        playerScore++
+        break
+      case "scissors vs paper":
+        announcement.textContent = "Scissors beats Paper, you win round!"
+        playerScore++
+        break
+      case "scissors vs rock":
+        announcement.textContent = "Rock beats Scissors, Computer wins round!"
+        computerScore++
+        break
+      case "rock vs paper":
+        announcement.textContent = "Paper beats Rock, Computer wins round!"
+        computerScore++
+        break
+      case "paper vs scissors":
+        announcement.textContent = "Scissors beats Paper, Computer wins round!"
+        computerScore++
+        break
+      default:
+        announcement.textContent = "Invalid input: Try again."
+    }
+
+    playerScoreDisplay.textContent = playerScore
+    computerScoreDisplay.textContent = computerScore
+
+    if (!(playerScore < 5 && computerScore < 5)) {
+      (playerScore < 5) ? announcement.textContent = "You lose Game!" : announcement.textContent = "You win Game!"
+      playerScore = 0
+      computerScore = 0
+    }
   }
-
-  switch (playerChoice + " vs " + computerChoice) {
-    case "rock vs scissors":
-      announcement.textContent = "Rock beats Scissors, you win round!"
-      playerScore++
-      break
-    case "paper vs rock":
-      announcement.textContent = "Paper beats Rock, you win round!"
-      playerScore++
-      break
-    case "scissors vs paper":
-      announcement.textContent = "Scissors beats Paper, you win round!"
-      playerScore++
-      break
-    case "scissors vs rock":
-      announcement.textContent = "Rock beats Scissors, Computer wins round!"
-      computerScore++
-      break
-    case "rock vs paper":
-      announcement.textContent = "Paper beats Rock, Computer wins round!"
-      computerScore++
-      break
-    case "paper vs scissors":
-      announcement.textContent = "Scissors beats Paper, Computer wins round!"
-      computerScore++
-      break
-    default:
-      announcement.textContent = "Invalid input: Try again."
-  }
-
-  console.log(computerScore)
-  console.log(playerScore)
-
-  if (!(playerScore < 5 && computerScore < 5)) {
-    (playerScore < 5) ? announcement.textContent = "You lose Game!" : announcement.textContent = "You win Game!"
-    playerScore = 0
-    computerScore = 0
-  }
-
 }
 
 const buttons = document.querySelector(".button-section")
