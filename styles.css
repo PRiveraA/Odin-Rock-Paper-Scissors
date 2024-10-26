@@ -115,4 +115,5 @@ button {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 4rem;
+  min-height: 59px;
 }

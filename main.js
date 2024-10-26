@@ -4,52 +4,57 @@ let playerScore = 0
 let computerScore = 0
 
 function getComputerChoice() {
+  let choiceDisplay = document.querySelector(".crbottom")
   let choices = ["rock", "paper", "scissors"]
   let randomNum = Math.floor(Math.random() * 3)
   console.log("Computer chose: " + choices[randomNum])
+  choiceDisplay.textContent = `CPU choice: ${choices[randomNum].charAt(0).toUpperCase()}${choices[randomNum].slice(1)}`
   return choices[randomNum]
 }
 
 function round(playerChoice, computerChoice) {
+
+  let announcement = document.querySelector(".screen-bottom")
+
   if (playerChoice === computerChoice) {
-    console.log("It's a tie!")
+    announcement.textContent = "It's a tie!"
     return
   }
 
   switch (playerChoice + " vs " + computerChoice) {
     case "rock vs scissors":
-      console.log("Rock beats Scissors, you win round!")
+      announcement.textContent = "Rock beats Scissors, you win round!"
       playerScore++
       break
     case "paper vs rock":
-      console.log("Paper beats Rock, you win round!")
+      announcement.textContent = "Paper beats Rock, you win round!"
       playerScore++
       break
     case "scissors vs paper":
-      console.log("Scissors beats Paper, you win round!")
+      announcement.textContent = "Scissors beats Paper, you win round!"
       playerScore++
       break
     case "scissors vs rock":
-      console.log("Rock beats Scissors, Computer wins round!")
+      announcement.textContent = "Rock beats Scissors, Computer wins round!"
       computerScore++
       break
     case "rock vs paper":
-      console.log("Paper beats Rock, Computer wins round!")
+      announcement.textContent = "Paper beats Rock, Computer wins round!"
       computerScore++
       break
     case "paper vs scissors":
-      console.log("Scissors beats Paper, Computer wins round!")
+      announcement.textContent = "Scissors beats Paper, Computer wins round!"
       computerScore++
       break
     default:
-      console.log("Invalid input: Try again.")
+      announcement.textContent = "Invalid input: Try again."
   }
 
   console.log(computerScore)
   console.log(playerScore)
 
   if (!(playerScore < 5 && computerScore < 5)) {
-    (playerScore < 5) ? alert("You lose Game!") : alert("You win Game!")
+    (playerScore < 5) ? announcement.textContent = "You lose Game!" : announcement.textContent = "You win Game!"
     playerScore = 0
     computerScore = 0
   }
@@ -61,6 +66,7 @@ const buttons = document.querySelector(".button-section")
 buttons.addEventListener("click", function (e) {
 
   let playerChoice = e.target.textContent.toLowerCase()
+
   round(playerChoice, getComputerChoice())
 
 })
