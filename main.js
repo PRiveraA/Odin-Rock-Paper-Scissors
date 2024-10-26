@@ -7,7 +7,6 @@ function getComputerChoice() {
   let choiceDisplay = document.querySelector(".crbottom")
   let choices = ["rock", "paper", "scissors"]
   let randomNum = Math.floor(Math.random() * 3)
-  console.log("Computer chose: " + choices[randomNum])
   choiceDisplay.textContent = `CPU choice: ${choices[randomNum].charAt(0).toUpperCase()}${choices[randomNum].slice(1)}`
   return choices[randomNum]
 }
@@ -47,8 +46,6 @@ function round(playerChoice, computerChoice) {
         announcement.textContent = "Scissors beats Paper, Computer wins round!"
         computerScore++
         break
-      default:
-        announcement.textContent = "Invalid input: Try again."
     }
 
     playerScoreDisplay.textContent = playerScore
