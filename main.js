@@ -44,21 +44,25 @@ function round(playerChoice, computerChoice) {
     default:
       console.log("Invalid input: Try again.")
   }
+
   console.log(computerScore)
   console.log(playerScore)
+
+  if (!(playerScore < 5 && computerScore < 5)) {
+    (playerScore < 5) ? alert("You Lose!") : alert("You win!")
+    playerScore = 0
+    computerScore = 0
+  }
+
 }
 
 const buttons = document.querySelector(".button-section")
 
 buttons.addEventListener("click", function (e) {
-  if (!(playerScore < 5 && computerScore < 5)) {
-    (playerScore < 5) ? alert("You Lose!") : alert("You win!")
-    playerScore = 0
-    computerScore = 0
-  } else {
-    let playerChoice = e.target.textContent.toLowerCase()
-    round(playerChoice, getComputerChoice())
-  }
+
+  let playerChoice = e.target.textContent.toLowerCase()
+  round(playerChoice, getComputerChoice())
+
 
 })
 
