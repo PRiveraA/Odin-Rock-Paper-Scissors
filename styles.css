@@ -1,5 +1,5 @@
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -20,6 +20,8 @@ main {
   align-items: center;
   height: 90%;
   width: 90%;
+  min-width: 60rem;
+  max-width: 60rem;
   gap: 7.5rem;
 }
 

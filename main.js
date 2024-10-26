@@ -1,5 +1,7 @@
 "use strict";
 
+let playerScore = 0
+let computerScore = 0
 
 function getComputerChoice() {
   let choices = ["rock", "paper", "scissors"]
@@ -7,18 +9,6 @@ function getComputerChoice() {
   console.log("Computer chose: " + choices[randomNum])
   return choices[randomNum]
 }
-
-
-function getHumanChoice() {
-  let choice = prompt("Choose: Rock, Paper, or Scissors").toLowerCase().trim()
-  console.log("You chose: " + choice)
-  return choice
-}
-
-
-let playerScore = 0
-let computerScore = 0
-
 
 function round(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
@@ -54,7 +44,31 @@ function round(playerChoice, computerChoice) {
     default:
       console.log("Invalid input: Try again.")
   }
+  console.log(computerScore)
+  console.log(playerScore)
 }
+
+const buttons = document.querySelector(".button-section")
+
+buttons.addEventListener("click", function (e) {
+  if (!(playerScore < 5 && computerScore < 5)) {
+    (playerScore < 5) ? alert("You Lose!") : alert("You win!")
+    playerScore = 0
+    computerScore = 0
+  } else {
+    let playerChoice = e.target.textContent.toLowerCase()
+    round(playerChoice, getComputerChoice())
+  }
+
+})
+
+
+
+
+
+
+
+
 
 function playGame() {
   // while (playerScore < 5 && computerScore < 5) {
@@ -63,5 +77,25 @@ function playGame() {
 
   // (playerScore < 5) ? alert("You Lose!") : alert("You win!")
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 playGame()
