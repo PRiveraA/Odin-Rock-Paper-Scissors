@@ -18,27 +18,27 @@ function round(playerChoice, computerChoice) {
 
   switch (playerChoice + " vs " + computerChoice) {
     case "rock vs scissors":
-      console.log("Rock beats Scissors, you win!")
+      console.log("Rock beats Scissors, you win round!")
       playerScore++
       break
     case "paper vs rock":
-      console.log("Paper beats Rock, you win!")
+      console.log("Paper beats Rock, you win round!")
       playerScore++
       break
     case "scissors vs paper":
-      console.log("Scissors beats Paper, you win!")
+      console.log("Scissors beats Paper, you win round!")
       playerScore++
       break
     case "scissors vs rock":
-      console.log("Rock beats Scissors, you lose!")
+      console.log("Rock beats Scissors, Computer wins round!")
       computerScore++
       break
     case "rock vs paper":
-      console.log("Paper beats Rock, you lose!")
+      console.log("Paper beats Rock, Computer wins round!")
       computerScore++
       break
     case "paper vs scissors":
-      console.log("Scissors beats Paper, you lose!")
+      console.log("Scissors beats Paper, Computer wins round!")
       computerScore++
       break
     default:
@@ -49,7 +49,7 @@ function round(playerChoice, computerChoice) {
   console.log(playerScore)
 
   if (!(playerScore < 5 && computerScore < 5)) {
-    (playerScore < 5) ? alert("You Lose!") : alert("You win!")
+    (playerScore < 5) ? alert("You lose Game!") : alert("You win Game!")
     playerScore = 0
     computerScore = 0
   }
@@ -63,43 +63,4 @@ buttons.addEventListener("click", function (e) {
   let playerChoice = e.target.textContent.toLowerCase()
   round(playerChoice, getComputerChoice())
 
-
 })
-
-
-
-
-
-
-
-
-
-function playGame() {
-  // while (playerScore < 5 && computerScore < 5) {
-  // round(getHumanChoice(), getComputerChoice())
-  // }
-
-  // (playerScore < 5) ? alert("You Lose!") : alert("You win!")
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-playGame()
